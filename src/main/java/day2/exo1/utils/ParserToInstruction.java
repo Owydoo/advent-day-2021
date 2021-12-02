@@ -6,7 +6,7 @@ import utils.Parsing;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Exo2Parser extends Parsing {
+public class ParserToInstruction extends Parsing {
     public List<Instruction> parseIntoInstructions(String filename){
         List<String> stringList = super.parseTextFile(filename);
 

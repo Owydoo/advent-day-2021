@@ -1,12 +1,12 @@
 package day2.exo1;
 
-import day2.exo1.utils.Exo2Parser;
+import day2.exo1.utils.ParserToInstruction;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        var parser2 = new Exo2Parser();
+        var parser2 = new ParserToInstruction();
         String filename = "src/main/java/day2/inputs/inputs-exo1.txt";
         List<Instruction> instructions = parser2.parseIntoInstructions(filename);
 
@@ -26,9 +26,6 @@ public class Main {
                 depth -= instruction.getAmount();
             }
         }
-
         System.out.println(depth * horizontalPosition);
-
     }
-
 }
