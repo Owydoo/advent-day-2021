@@ -1,4 +1,6 @@
-package exo1;
+package day2.exo1;
+
+import day2.exo1.utils.Exo2Parser;
 
 import java.util.List;
 

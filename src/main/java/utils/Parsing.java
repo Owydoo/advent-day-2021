@@ -1,4 +1,4 @@
-package exo1;
+package utils;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class utils {
+public class Parsing {
 
     public List<String> parseTextFile(String filename) {
         List<String> list = new ArrayList<>();

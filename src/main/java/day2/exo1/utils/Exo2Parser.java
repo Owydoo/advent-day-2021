@@ -1,9 +1,12 @@
-package exo1;
+package day2.exo1.utils;
+
+import day2.exo1.Instruction;
+import utils.Parsing;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Exo2Parser extends utils{
+public class Exo2Parser extends Parsing {
     public List<Instruction> parseIntoInstructions(String filename){
         List<String> stringList = super.parseTextFile(filename);
 

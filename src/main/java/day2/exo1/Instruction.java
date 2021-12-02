@@ -1,4 +1,4 @@
-package exo1;
+package day2.exo1;
 
 
 public class Instruction {
