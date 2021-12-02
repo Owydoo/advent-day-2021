@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        String file = "/home/developer/Documents/Repos_Persos/Java/advent-day-1/src/main/resources/inputs-exo2.txt";
+        String file = "src/main/java/day1/inputs/input.txt";
         List<Window> dataListe = readInputsInFile(file);
         System.out.println(dataListe);
         System.out.println(getNbIncreaseInWindows(dataListe));

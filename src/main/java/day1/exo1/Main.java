@@ -7,10 +7,10 @@ import java.io.IOException;
 
 public class Main {
 
-
+//https://adventofcode.com/2021/day/1
 
     public static void main(String[] args) {
-        String file = "/home/developer/Documents/Repos_Persos/Java/advent-day-1/src/main/resources/input.txt";
+        String file = "src/main/java/day1/inputs/input.txt";
         Integer previousValue = -1;
         String line;
         Integer res = 0;

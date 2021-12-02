@@ -7,7 +7,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         var parser2 = new Exo2Parser();
-        String filename = "/home/developer/Documents/Repos_Persos/Java/advent-day-2/src/main/resources/input1.txt";
+        String filename = "src/main/java/day2/inputs/inputs-exo1.txt";
         List<Instruction> instructions = parser2.parseIntoInstructions(filename);
 
 
