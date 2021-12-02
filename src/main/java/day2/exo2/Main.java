@@ -6,6 +6,7 @@ import day2.exo1.utils.ParserToInstruction;
 import java.util.List;
 
 public class Main {
+    //https://adventofcode.com/2021/day/2
     public static void main(String[] args) {
         var parser = new ParserToInstruction();
         String filename = "src/main/java/day2/inputs/inputs-exo1.txt";
@@ -34,3 +35,4 @@ public class Main {
         System.out.println("answer (depth * horizontalPosition) : " + depth * horizontalPosition);
     }
 }
+

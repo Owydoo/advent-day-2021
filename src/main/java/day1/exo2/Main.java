@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    //https://adventofcode.com/2021/day/1
     public static void main(String[] args) {
         String file = "src/main/java/day1/inputs/input.txt";
         List<Window> dataListe = readInputsInFile(file);

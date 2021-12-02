@@ -5,6 +5,7 @@ import day2.exo1.utils.ParserToInstruction;
 import java.util.List;
 
 public class Main {
+    //https://adventofcode.com/2021/day/2
     public static void main(String[] args) {
         var parser2 = new ParserToInstruction();
         String filename = "src/main/java/day2/inputs/inputs-exo1.txt";
@@ -18,11 +19,9 @@ public class Main {
             Instruction instruction = instructions.get(i);
             if (instruction.getDirection().equals(Instruction.Direction.FORWARD)) {
                 horizontalPosition += instruction.getAmount();
-            }
-            else if (instruction.getDirection().equals(Instruction.Direction.DOWN)){
+            } else if (instruction.getDirection().equals(Instruction.Direction.DOWN)) {
                 depth += instruction.getAmount();
-            }
-            else if (instruction.getDirection().equals(Instruction.Direction.UP)){
+            } else if (instruction.getDirection().equals(Instruction.Direction.UP)) {
                 depth -= instruction.getAmount();
             }
         }
