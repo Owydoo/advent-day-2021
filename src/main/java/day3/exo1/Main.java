@@ -6,32 +6,24 @@ import utils.Parsing;
 import java.util.Arrays;
 import java.util.List;
 
+//https://adventofcode.com/2021/day/3
 public class Main {
     public static void main(String[] args) {
-        //var parserToInts = new ParserToInts();
         var parser = new Parsing();
         var arrayUtils = new ArrayUtils();
         String filename = "src/main/java/day3/inputs/inputs.txt";
         //String filename = "src/main/java/day3/inputs/inputEasy.txt";
-        //List<Integer> integers = parserToInts.parseToIntegers(filename);
         List<String> stringList = parser.parseTextFile(filename);
 
         int oneInputLength = stringList.get(0).length();
-        //System.out.println(stringList);
 
         int[] nbOfOneInEachBit = new int[oneInputLength];
         arrayUtils.initArray(nbOfOneInEachBit);
-        System.out.println(Arrays.toString(nbOfOneInEachBit));
         findNbOfOneInEachBit(nbOfOneInEachBit, stringList, oneInputLength);
-
-
-        System.out.println(Arrays.toString(nbOfOneInEachBit));
 
         int[] whichBitIsMoreCommonForEachBit = new int[oneInputLength];
         arrayUtils.initArray(whichBitIsMoreCommonForEachBit);
         findWhichBitIsMoreCommonForEachBit(whichBitIsMoreCommonForEachBit, nbOfOneInEachBit, stringList, oneInputLength);
-
-        System.out.println(Arrays.toString(whichBitIsMoreCommonForEachBit));
 
         Answer answer = new Answer(0, 0, 0);
         answer = constructAnswer(whichBitIsMoreCommonForEachBit);

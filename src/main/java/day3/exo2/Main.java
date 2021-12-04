@@ -37,11 +37,9 @@ public class Main {
         if (strings.size() <= 1) {
             return strings;
         } else if (fewerOrEqualsZerosInPositionIndex(strings, i)) {
-            //réduire strings de tous les éléments commençant par 0 en position i
             strings = keepWordsWithBitAtGivenIndex(strings, i, '0');
 
             return findResultCO2(strings, i + 1);
-            //return findResultOxygen du nouveau strings avec i + 1
         } else if (!fewerOrEqualsZerosInPositionIndex(strings, i)) {
             strings = keepWordsWithBitAtGivenIndex(strings, i, '1');
 
@@ -68,11 +66,9 @@ public class Main {
         if (strings.size() <= 1) {
             return strings;
         } else if (moreOrEqualsOnesInPositionIndex(strings, i)) {
-            //réduire strings de tous les éléments commençant par 0 en position i
             strings = keepWordsWithBitAtGivenIndex(strings, i, '1');
 
             return findResultOxygen(strings, i + 1);
-            //return findResultOxygen du nouveau strings avec i + 1
         } else if (!moreOrEqualsOnesInPositionIndex(strings, i)) {
             strings = keepWordsWithBitAtGivenIndex(strings, i, '0');
 
