@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) {
         var parser = new Parsing();
         var bingoParser = new BingoParser();
-        String filename = "src/main/java/day4/inputs/inputs.txt";
-//        String filename = "src/main/java/day4/inputs/inputsEasy.txt";
+//        String filename = "src/main/java/day4/inputs/inputs.txt";
+        String filename = "src/main/java/day4/inputs/inputsEasy.txt";
 
         List<String> stringList = parser.parseTextFile(filename);
 
@@ -20,6 +20,7 @@ public class Main {
         System.out.println(bingoInputs);
 
         List<BingoBoard> bingoBoards = bingoParser.getAllBingoBoardsFromStringList(stringList);
+        System.out.println(bingoBoards);
 
 
     }
