@@ -6,4 +6,14 @@ public class ArrayUtils {
             array[i] = 0;
         }
     }
+
+    public static boolean elementIsInArray(Integer element, int[] array) {
+        for (int x :
+                array) {
+            if (x == element) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
