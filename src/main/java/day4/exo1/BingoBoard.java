@@ -31,15 +31,15 @@ public class BingoBoard {
 
     @Override
     public String toString() {
-        String line1 = String.format("[ %2d %2d %2d %2d %2d ",board[0][0],board[0][1],board[0][2],board[0][3],
+        String line1 = String.format("  %2d %2d %2d %2d %2d \n",board[0][0],board[0][1],board[0][2],board[0][3],
                 board[0][4]);
-        String line2 = String.format("  %2d %2d %2d %2d %2d ", board[1][0], board[1][1], board[1][2], board[1][3],
+        String line2 = String.format("  %2d %2d %2d %2d %2d \n", board[1][0], board[1][1], board[1][2], board[1][3],
                 board[1][4]);
-        String line3 = String.format("  %2d %2d %2d %2d %2d ", board[2][0], board[2][1], board[2][2], board[2][3],
+        String line3 = String.format("  %2d %2d %2d %2d %2d \n", board[2][0], board[2][1], board[2][2], board[2][3],
                 board[2][4]);
-        String line4 = String.format("  %2d %2d %2d %2d %2d ", board[3][0], board[3][1], board[3][2], board[3][3],
+        String line4 = String.format("  %2d %2d %2d %2d %2d \n", board[3][0], board[3][1], board[3][2], board[3][3],
                 board[3][4]);
-        String line5 = String.format("  %2d %2d %2d %2d %2d ]",board[4][0], board[4][1], board[4][2], board[4][3],
+        String line5 = String.format("  %2d %2d %2d %2d %2d \n",board[4][0], board[4][1], board[4][2], board[4][3],
                 board[4][4]);
         return "Board :\n"
                 .concat(line1)
