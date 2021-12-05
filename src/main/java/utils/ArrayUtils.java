@@ -1,17 +1,16 @@
 package utils;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ArrayUtils {
     public static void initArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            array[i] = 0;
-        }
+        Arrays.fill(array, 0);
     }
 
     public static boolean intIsInList(int element, List<Integer> array) {
-        for (int i = 0; i < array.size(); i++) {
-            if (element == array.get(i)){
+        for (Integer integer : array) {
+            if (element == integer) {
                 return true;
             }
         }

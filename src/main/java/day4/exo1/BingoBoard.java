@@ -6,32 +6,14 @@ import static utils.ArrayUtils.intIsInList;
 
 public class BingoBoard {
 
-    private int[][] board;
+    private final int[][] board;
 
     public BingoBoard(int[][] board) {
         this.board = board;
     }
 
-    public BingoBoard() {
-        this.board = initBoard();
-    }
-
     public int[][] getBoard() {
         return board;
-    }
-
-    public void setBoard(int[][] board) {
-        this.board = board;
-    }
-
-    public int[][] initBoard() {
-        int[][] res = new int[5][5];
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 5; j++) {
-                res[i][j] = 0;
-            }
-        }
-        return res;
     }
 
     @Override
