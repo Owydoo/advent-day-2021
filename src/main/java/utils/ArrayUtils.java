@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.List;
+
 public class ArrayUtils {
     public static void initArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
@@ -7,10 +9,9 @@ public class ArrayUtils {
         }
     }
 
-    public static boolean elementIsInArray(Integer element, int[] array) {
-        for (int x :
-                array) {
-            if (x == element) {
+    public static boolean elementIsInArray(int element, List<Integer> array) {
+        for (int i = 0; i < array.size(); i++) {
+            if (element == array.get(i)){
                 return true;
             }
         }

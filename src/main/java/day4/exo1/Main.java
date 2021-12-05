@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    public static int lastInput;
+
     public static void main(String[] args) {
         var parser = new Parsing();
         var bingoParser = new BingoParser();
@@ -28,7 +30,8 @@ public class Main {
         //vérifier que chaque board n'est pas terminée
 
         BingoBoard winningBoard = beginBingoGame(bingoInputs, bingoBoards);
-        System.out.println("winning board : "+winningBoard);
+        System.out.println("winning board : " + winningBoard);
+        System.out.println("last input : " + lastInput);
 
     }
 
@@ -37,12 +40,15 @@ public class Main {
         for (int input :
                 bingoInputs) {
             readInputs.add(input);
-            BingoBoard winningBoard = checkIfOneBoardWinning(readInputs, bingoBoards);
-            if (winningBoard != null) {
-                return winningBoard;
+            if (readInputs.size() >= 5) {
+
+                lastInput = input;
+                BingoBoard winningBoard = checkIfOneBoardWinning(readInputs, bingoBoards);
+                if (winningBoard != null) {
+                    return winningBoard;
+                }
             }
         }
-
         //no board found with all inputs
         return null;
     }

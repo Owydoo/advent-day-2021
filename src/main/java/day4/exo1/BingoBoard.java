@@ -58,23 +58,30 @@ public class BingoBoard {
         //vérifier pour une ligne si toutes les valeurs sont les inputs
         //Sinon passer à la ligne suivante.
         for (int line = 0; line < 5; line++) {
-            if (lineIsCompleted(this.board[line], readInputs)){
+            if (lineIsCompleted(this.board[line], readInputs)) {
+                System.out.println(String.format("line is completed\nreadInputs : %s",
+                        readInputs.toString()));
+                System.out.println(String.format("this.board[line] : %d %d %d %d %d", this.board[line][0],
+                        this.board[line][1],this.board[line][2],this.board[line][3],this.board[line][4]));
                 return true;
             }
         }
         for (int column = 0; column < 5; column++) {
-            if (columnIsCompleted(this.board, column, readInputs)){
+            if (columnIsCompleted(this.board, column, readInputs)) {
+                System.out.println(String.format("column is completed\ncolumn : %d, readInputs : %s",
+                         column, readInputs.toString()));
+                System.out.println(String.format("column : %d %d %d %d %d",this.board[0][column],
+                        this.board[1][column],this.board[2][column],this.board[3][column],this.board[4][column]));
                 return true;
             }
         }
         return false;
-
-
     }
 
     private boolean columnIsCompleted(int[][] board, int column, List<Integer> readInputs) {
         for (int line = 0; line < 5; line++) {
-            if (!readInputs.contains(board[line][column])){
+            //System.out.println("readinput : "+readInputs.contains(board[line][column]));
+            if (!readInputs.contains(board[line][column])) {
                 return false;
             }
         }
@@ -82,9 +89,8 @@ public class BingoBoard {
     }
 
     private boolean lineIsCompleted(int[] ints, List<Integer> readInputs) {
-        for (int input :
-                readInputs) {
-            if (!elementIsInArray(input, ints)){
+        for (int i = 0; i < ints.length; i++) {
+            if (!elementIsInArray(ints[i], readInputs)){
                 return false;
             }
         }
