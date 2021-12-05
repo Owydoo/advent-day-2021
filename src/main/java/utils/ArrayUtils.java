@@ -9,12 +9,21 @@ public class ArrayUtils {
         }
     }
 
-    public static boolean elementIsInArray(int element, List<Integer> array) {
+    public static boolean intIsInList(int element, List<Integer> array) {
         for (int i = 0; i < array.size(); i++) {
             if (element == array.get(i)){
                 return true;
             }
         }
         return false;
+    }
+
+    public static int sumOfListElements(List<Integer> list){
+        int res = 0;
+        for (Integer element :
+                list) {
+            res += element;
+        }
+        return res;
     }
 }

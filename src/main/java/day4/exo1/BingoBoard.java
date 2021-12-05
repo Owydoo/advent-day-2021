@@ -2,7 +2,7 @@ package day4.exo1;
 
 import java.util.List;
 
-import static utils.ArrayUtils.elementIsInArray;
+import static utils.ArrayUtils.intIsInList;
 
 public class BingoBoard {
 
@@ -90,7 +90,7 @@ public class BingoBoard {
 
     private boolean lineIsCompleted(int[] ints, List<Integer> readInputs) {
         for (int i = 0; i < ints.length; i++) {
-            if (!elementIsInArray(ints[i], readInputs)){
+            if (!intIsInList(ints[i], readInputs)){
                 return false;
             }
         }

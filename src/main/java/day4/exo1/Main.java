@@ -6,14 +6,17 @@ import utils.Parsing;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utils.ArrayUtils.sumOfListElements;
+//https://adventofcode.com/2021/day/4
 public class Main {
     public static int lastInput;
+    public static List<Integer> readInputs = new ArrayList<>();
 
     public static void main(String[] args) {
         var parser = new Parsing();
         var bingoParser = new BingoParser();
-//        String filename = "src/main/java/day4/inputs/inputs.txt";
-        String filename = "src/main/java/day4/inputs/inputsEasy.txt";
+        String filename = "src/main/java/day4/inputs/inputs.txt";
+//        String filename = "src/main/java/day4/inputs/inputsEasy.txt";
 
         List<String> stringList = parser.parseTextFile(filename);
 
@@ -33,10 +36,30 @@ public class Main {
         System.out.println("winning board : " + winningBoard);
         System.out.println("last input : " + lastInput);
 
+        List<Integer> unmarkedNumbers = findUnmarkedNumbers(winningBoard, readInputs);
+
+        int sumOfUnmarkedNumbers = sumOfListElements(unmarkedNumbers);
+        System.out.println("sumOfUnmarkedNumbers : " + sumOfUnmarkedNumbers);
+
+        int answer = sumOfUnmarkedNumbers * lastInput;
+        System.out.println("answer : " + answer);
+
+    }
+
+    private static List<Integer> findUnmarkedNumbers(BingoBoard winningBoard, List<Integer> readInputs) {
+        List<Integer> res = new ArrayList<>();
+        for (int line = 0; line < 5; line++) {
+            for (int column = 0; column < 5; column++) {
+                if (!readInputs.contains(winningBoard.getBoard()[line][column])) {
+                    res.add(winningBoard.getBoard()[line][column]);
+                }
+            }
+        }
+        return res;
     }
 
     private static BingoBoard beginBingoGame(List<Integer> bingoInputs, List<BingoBoard> bingoBoards) {
-        List<Integer> readInputs = new ArrayList<>();
+
         for (int input :
                 bingoInputs) {
             readInputs.add(input);
