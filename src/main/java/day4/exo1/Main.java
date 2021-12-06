@@ -36,7 +36,8 @@ public class Main {
         System.out.println("winning board : " + winningBoard);
         System.out.println("last input : " + lastInput);
 
-        List<Integer> unmarkedNumbers = findUnmarkedNumbers(winningBoard, readInputs);
+        //List<Integer> unmarkedNumbers = findUnmarkedNumbers(winningBoard, readInputs);
+        List<Integer> unmarkedNumbers = winningBoard.findUnmarkedNumbers(readInputs);
 
         int sumOfUnmarkedNumbers = sumOfListElements(unmarkedNumbers);
         System.out.println("sumOfUnmarkedNumbers : " + sumOfUnmarkedNumbers);

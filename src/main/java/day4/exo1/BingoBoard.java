@@ -1,5 +1,6 @@
 package day4.exo1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static utils.ArrayUtils.intIsInList;
@@ -70,6 +71,17 @@ public class BingoBoard {
         return true;
     }
 
+    public List<Integer> findUnmarkedNumbers(List<Integer> readInputs) {
+        List<Integer> res = new ArrayList<>();
+        for (int line = 0; line < 5; line++) {
+            for (int column = 0; column < 5; column++) {
+                if (!readInputs.contains(this.getBoard()[line][column])) {
+                    res.add(this.getBoard()[line][column]);
+                }
+            }
+        }
+        return res;
+    }
 }
 
 
