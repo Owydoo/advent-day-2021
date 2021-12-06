@@ -20,8 +20,10 @@ public class ParserToVentBoard extends Parsing {
             Vent startVent = new Vent(Integer.parseInt(lineString[0]),Integer.parseInt(lineString[1]));
             Vent endVent = new Vent(Integer.parseInt(lineString[2]),Integer.parseInt(lineString[3]));
 
-            VentLine ventLine = new VentLine(startVent, endVent);
-            ventLinesList.add(ventLine);
+            if (startVent.match(endVent)){
+                VentLine ventLine = new VentLine(startVent, endVent);
+                ventLinesList.add(ventLine);
+            }
         }
         ventBoard.setVentLines(ventLinesList);
         return ventBoard;

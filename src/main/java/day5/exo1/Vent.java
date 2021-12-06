@@ -31,4 +31,13 @@ public class Vent {
     public void setY(int y) {
         this.y = y;
     }
+
+    /**
+     * We take only vertical or horizontal lines so one coordinate has to be equal
+     * @param vent
+     * @return
+     */
+    public boolean match(Vent vent) {
+        return (this.getX() == vent.getX()) || (this.getY() == vent.getY());
+    }
 }

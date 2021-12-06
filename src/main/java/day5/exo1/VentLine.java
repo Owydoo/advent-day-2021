@@ -8,9 +8,17 @@ public class VentLine {
     public List<Vent> vents = new ArrayList<>();
 
     public VentLine(Vent startVent, Vent endVent) {
-        this.startVent = startVent;
-        this.endVent = endVent;
-        this.vents = buildVents(startVent, endVent);
+        if ((startVent.getX() == endVent.getX()) && (startVent.getY() > endVent.getY())) {
+            this.startVent = endVent;
+            this.endVent = startVent;
+        } else if ((startVent.getY() == endVent.getY()) && (startVent.getX() > endVent.getX())) {
+            this.startVent = endVent;
+            this.endVent = startVent;
+        } else {
+            this.startVent = startVent;
+            this.endVent = endVent;
+        }
+        this.vents = buildVents(this.startVent, this.endVent);
     }
 
     @Override
@@ -48,20 +56,31 @@ public class VentLine {
 
     private List<Vent> buildVents(Vent start, Vent end) {
         List<Vent> resVents = new ArrayList<>();
-        if (start.getX() == end.getX()){
+        if (start.getX() == end.getX()) {
             resVents.add(start);
-            for (int i = 1; i < end.getY()-start.getY(); i++) {
-                resVents.add(new Vent(start.getX(), start.getY()+i));
+            for (int i = 1; i < end.getY() - start.getY(); i++) {
+                resVents.add(new Vent(start.getX(), start.getY() + i));
             }
             resVents.add(end);
-        }
-        else if (start.getY() == end.getY()){
+        } else if (start.getY() == end.getY()) {
             resVents.add(start);
-            for (int i = 1 ; i < end.getX() - start.getX() ; i++) {
-                resVents.add(new Vent(start.getX()+i, start.getY()));
+            for (int i = 1; i < end.getX() - start.getX(); i++) {
+                resVents.add(new Vent(start.getX() + i, start.getY()));
             }
             resVents.add(end);
         }
         return resVents;
+    }
+
+    public int xMax() {
+        int ventXMax = 0;
+        for (Vent vent:
+             this.vents) {
+            if (vent.getX() > ventXMax){
+                ventXMax = vent.getX();
+            }
+        }
+        return ventXMax;
+
     }
 }

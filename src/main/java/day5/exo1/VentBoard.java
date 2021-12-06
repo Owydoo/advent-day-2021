@@ -22,8 +22,23 @@ public class VentBoard {
         this.ventLines = ventLines;
     }
 
+    public int xMax(){
+        int xMax = 0;
+        for (VentLine ventLine:
+             this.ventLines) {
+            int maxInVentLine = ventLine.xMax();
+            if (maxInVentLine > xMax){
+                xMax = maxInVentLine;
+            }
+        }
+        return xMax;
+    }
+
     @Override
     public String toString() {
+        for (int i = 0; i < xMax(); i++) {
+            
+        }
         return "VentBoard{" +
                 "ventLines=" + ventLines +
                 '}';
