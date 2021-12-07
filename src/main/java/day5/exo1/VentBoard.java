@@ -48,6 +48,9 @@ public class VentBoard {
 
     @Override
     public String toString() {
+        if (yMax() > 30 | xMax() > 30){
+            return "VentBoard too big to be printed";
+        }
         String res = "";
         for (int line = 0; line <= yMax(); line++) {
             for (int column = 0; column <= xMax(); column++) {
