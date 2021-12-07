@@ -14,16 +14,20 @@ public class ParserToVentBoard extends Parsing {
         VentBoard ventBoard = new VentBoard();
         List<VentLine> ventLinesList = new ArrayList<>();
 
+        int index = 0;
         for (String s :
                 stringList) {
             String[] lineString = s.split(" -> |,");
             Vent startVent = new Vent(Integer.parseInt(lineString[0]),Integer.parseInt(lineString[1]));
             Vent endVent = new Vent(Integer.parseInt(lineString[2]),Integer.parseInt(lineString[3]));
 
+            System.out.println("parser loading : " + (index/stringList.size())*100 + " %");
+
             if (startVent.match(endVent)){
                 VentLine ventLine = new VentLine(startVent, endVent);
                 ventLinesList.add(ventLine);
             }
+            index += 1;
         }
         ventBoard.setVentLines(ventLinesList);
         return ventBoard;

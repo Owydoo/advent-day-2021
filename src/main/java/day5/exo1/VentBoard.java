@@ -70,4 +70,19 @@ public class VentBoard {
         }
         return res;
     }
+
+
+    public int findNbPointsWhereAtLeastTwoVentsOverlap() {
+        int res = 0;
+        for (int line = 0; line <= yMax(); line++) {
+            System.out.println("find nb loading : " + ((line / yMax()) * 100) + " %");
+            for (int column = 0; column <= xMax(); column++) {
+                int nbVentAtThisPlace = getNbVentAtCoordinates(line, column);
+                if (nbVentAtThisPlace >= 2) {
+                    res += 1;
+                }
+            }
+        }
+        return res;
+    }
 }
