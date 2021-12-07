@@ -1,7 +1,7 @@
 package day5.exo1;
 
 public class Vent {
-    public int x,y;
+    private int x, y;
 
     public Vent(int x, int y) {
         this.x = x;
@@ -34,6 +34,7 @@ public class Vent {
 
     /**
      * We take only vertical or horizontal lines so one coordinate has to be equal
+     *
      * @param vent
      * @return
      */

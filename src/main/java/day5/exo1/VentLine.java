@@ -74,13 +74,33 @@ public class VentLine {
 
     public int xMax() {
         int ventXMax = 0;
-        for (Vent vent:
-             this.vents) {
-            if (vent.getX() > ventXMax){
+        for (Vent vent :
+                this.vents) {
+            if (vent.getX() > ventXMax) {
                 ventXMax = vent.getX();
             }
         }
         return ventXMax;
+    }
 
+    public int yMax() {
+        int ventYMax = 0;
+        for (Vent vent :
+                this.vents) {
+            if (vent.getY() > ventYMax) {
+                ventYMax = vent.getY();
+            }
+        }
+        return ventYMax;
+    }
+
+    public boolean hasAVentAt(int line, int column) {
+        for (Vent vent :
+                this.vents) {
+            if (vent.getX() == column && vent.getY() == line) {
+                return true;
+            }
+        }
+        return false;
     }
 }
