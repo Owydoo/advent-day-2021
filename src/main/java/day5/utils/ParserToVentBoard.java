@@ -7,8 +7,13 @@ import utils.Parsing;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ParserToVentBoard extends Parsing {
+    private static Pattern pattern;
+    private static Matcher matcher;
+
     public VentBoard parseVentLinesFromFile(String filename) {
         List<String> stringList = super.parseTextFile(filename);
         VentBoard ventBoard = new VentBoard();
@@ -18,9 +23,16 @@ public class ParserToVentBoard extends Parsing {
         int stringListSize = stringList.size();
         for (String s :
                 stringList) {
-            String[] lineString = s.split(" -> |,");
-            Vent startVent = new Vent(Integer.parseInt(lineString[0]), Integer.parseInt(lineString[1]));
-            Vent endVent = new Vent(Integer.parseInt(lineString[2]), Integer.parseInt(lineString[3]));
+
+            pattern = Pattern.compile("(?<x1>\\d+),(?<y1>\\d+) -> (?<x2>\\d+),(?<y2>\\d+)");
+            matcher = pattern.matcher(s);
+            matcher.matches();
+
+            Vent startVent = new Vent(Integer.parseInt(matcher.group("x1")), Integer.parseInt(matcher.group(
+                    "y1")));
+            Vent endVent = new Vent(Integer.parseInt(matcher.group("x2")),
+                    Integer.parseInt(matcher.group("y2")));
+
             System.out.println("parser loading : " + (index * 100) / stringListSize + " %");
 
             if (startVent.match(endVent)) {
