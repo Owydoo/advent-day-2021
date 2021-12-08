@@ -3,6 +3,7 @@ package day5.utils;
 import day5.exo1.Vent;
 import day5.exo1.VentBoard;
 import day5.exo1.VentLine;
+import day5.exo2.VentStrip;
 import utils.Parsing;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ public class ParserToVentBoard extends Parsing {
     private static Pattern pattern;
     private static Matcher matcher;
 
-    public VentBoard parseVentLinesFromFile(String filename) {
+    public VentBoard parseVentLinesFromFile(String filename, boolean isExo2) {
         List<String> stringList = super.parseTextFile(filename);
         VentBoard ventBoard = new VentBoard();
         List<VentLine> ventLinesList = new ArrayList<>();
@@ -35,13 +36,20 @@ public class ParserToVentBoard extends Parsing {
 
             System.out.println("parser loading : " + (index * 100) / stringListSize + " %");
 
-            if (startVent.match(endVent)) {
-                VentLine ventLine = new VentLine(startVent, endVent);
-                ventLinesList.add(ventLine);
+            if (isExo2) {
+                ventLinesList.add(new VentStrip(startVent, endVent));
+            }
+            else {
+                if (startVent.match(endVent)) {
+                    ventLinesList.add(new VentLine(startVent, endVent));
+                }
             }
             index += 1;
         }
+        System.out.println(ventLinesList);
         ventBoard.setVentLines(ventLinesList);
         return ventBoard;
     }
+
+
 }

@@ -21,6 +21,8 @@ public class VentLine {
         this.vents = buildVents(this.startVent, this.endVent);
     }
 
+    public VentLine(){};
+
     @Override
     public String toString() {
         return "VentLine{" +
@@ -54,7 +56,7 @@ public class VentLine {
         this.vents = vents;
     }
 
-    private List<Vent> buildVents(Vent start, Vent end) {
+    public List<Vent> buildVents(Vent start, Vent end) {
         List<Vent> resVents = new ArrayList<>();
         if (start.getX() == end.getX()) {
             resVents.add(start);

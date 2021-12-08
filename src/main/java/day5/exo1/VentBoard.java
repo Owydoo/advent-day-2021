@@ -48,7 +48,7 @@ public class VentBoard {
 
     @Override
     public String toString() {
-        if (yMax() > 30 | xMax() > 30){
+        if (yMax() > 30 | xMax() > 30) {
             return "VentBoard too big to be printed";
         }
         String res = "";
@@ -80,7 +80,7 @@ public class VentBoard {
         int maxHeight = yMax();
         int maxWidth = xMax();
         for (int line = 0; line <= maxHeight; line++) {
-            System.out.println("find nb loading : " + ((line*100) / maxHeight) + " %");
+            System.out.println("find nb loading : " + ((line * 100) / maxHeight) + " %");
             for (int column = 0; column <= maxWidth; column++) {
                 int nbVentAtThisPlace = getNbVentAtCoordinates(line, column);
                 if (nbVentAtThisPlace >= 2) {
